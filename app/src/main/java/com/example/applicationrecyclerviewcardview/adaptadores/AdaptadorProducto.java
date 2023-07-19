@@ -19,7 +19,9 @@ import com.example.applicationrecyclerviewcardview.ProductoActivity;
 import com.example.applicationrecyclerviewcardview.R;
 import com.example.applicationrecyclerviewcardview.modelos.Producto;
 
+import java.text.NumberFormat;
 import java.util.List;
+import java.util.Locale;
 
 public class AdaptadorProducto extends RecyclerView.Adapter<AdaptadorProducto.ProductoViewHolder>
 {
@@ -44,7 +46,8 @@ public class AdaptadorProducto extends RecyclerView.Adapter<AdaptadorProducto.Pr
     public void onBindViewHolder(ProductoViewHolder holder, int position) {
         Producto producto = lstProductos.get(position);
         holder.textViewTitle.setText(producto.getTitle());
-        holder.textViewValor.setText(producto.getPrice());
+
+        holder.textViewValor.setText("$" + producto.getPrice());
         holder.textViewDescripcion.setText(producto.getDescription());
 
         //Establecer el evento click en el cardview creado.
